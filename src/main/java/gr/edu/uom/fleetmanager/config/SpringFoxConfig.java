@@ -16,7 +16,7 @@ public class SpringFoxConfig {
   public Docket productApi() {
     return new Docket(DocumentationType.SWAGGER_2)
       .select()                 .apis(RequestHandlerSelectors.basePackage("gr.edu.uom.fleetmanager.controller"))
-      .paths(regex("/employee.*"))
+      .paths(regex("/.*"))
       .build();
   }
 }
