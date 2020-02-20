@@ -13,7 +13,7 @@ public class ClientService {
   @Autowired
   private ClientRepository clientRepository;
 
-  public List<Client> getAllClients(){
+  public List<Client> getAllClients() {
     return clientRepository.findAll();
   }
 
@@ -28,5 +28,4 @@ public class ClientService {
   public void deleteClient(Long id) {
     clientRepository.deleteById(id);
   }
-
 }

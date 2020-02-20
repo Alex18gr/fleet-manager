@@ -25,3 +25,33 @@ CREATE TABLE client (
   start_booking date DEFAULT NULL,
   end_booking date DEFAULT NULL
 );
+
+DROP TABLE IF EXISTS motorcycle;
+
+CREATE TABLE motorcycle (
+  licence_plate VARCHAR(250) NOT NULL PRIMARY KEY,
+  model VARCHAR(250) NOT NULL,
+  model_year date DEFAULT NULL,
+  kilometers INT,
+  capability_seat INT
+);
+
+DROP TABLE IF EXISTS taxi;
+
+CREATE TABLE taxi (
+  licence_plate VARCHAR(250) NOT NULL PRIMARY KEY,
+  model VARCHAR(250) NOT NULL,
+  model_year date DEFAULT NULL,
+  kilometers INT,
+  capability_seat INT
+);
+
+DROP TABLE IF EXISTS minivan;
+
+CREATE TABLE minivan (
+  licence_plate VARCHAR(250) NOT NULL PRIMARY KEY,
+  model VARCHAR(250) NOT NULL,
+  model_year date DEFAULT NULL,
+  kilometers INT,
+  capability_seat INT
+);
