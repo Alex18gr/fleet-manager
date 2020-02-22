@@ -3,10 +3,11 @@ package gr.edu.uom.fleetmanager.controller;
 import gr.edu.uom.fleetmanager.model.MiniVan;
 import gr.edu.uom.fleetmanager.service.MiniVanService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.List;
+
+@RestController
 @RequestMapping("/minivan")
 public class MiniVanController {
 
@@ -18,9 +19,13 @@ public class MiniVanController {
     return miniVanService.getMIniVanByLicencePlate(licencePlate);
   }
 
+  @GetMapping(path = "/all")
+  public List<MiniVan> getAllMiniVans() {
+    return miniVanService.getAllMiniVans();
+  }
+
   @PostMapping("")
   public MiniVan createMiniVan(@RequestBody MiniVan miniVan) {
-    miniVan.setLicencePlate(null);
     return miniVanService.saveMiniVan(miniVan);
   }
 

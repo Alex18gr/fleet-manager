@@ -3,19 +3,25 @@ package gr.edu.uom.fleetmanager.controller;
 import gr.edu.uom.fleetmanager.model.Client;
 import gr.edu.uom.fleetmanager.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.List;
+
+@RestController
 @RequestMapping("/client")
 public class ClientController {
 
   @Autowired
   private ClientService clientService;
 
-  @GetMapping("/{id}")
+  @GetMapping(path = "/{id}")
   public Client getClient(@PathVariable Long id) {
     return clientService.getClientById(id);
+  }
+
+  @GetMapping(path = "/all")
+  public List<Client> getAllClients() {
+    return clientService.getAllClients();
   }
 
   @PostMapping("")

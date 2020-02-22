@@ -6,16 +6,16 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "client")
-@Access(value= AccessType.FIELD)
+@Access(value = AccessType.FIELD)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Client extends Driver {
 
   @Temporal(TemporalType.DATE)
-  @Column(name="start_booking")
+  @Column(name = "start_booking")
   private Date startDateBooking;
 
   @Temporal(TemporalType.DATE)
-  @Column(name="end_booking")
+  @Column(name = "end_booking")
   private Date endDateBooking;
 
 

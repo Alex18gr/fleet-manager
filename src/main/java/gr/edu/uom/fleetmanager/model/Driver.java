@@ -9,7 +9,7 @@ public class Driver {
 
   @Id
   @GeneratedValue(strategy=GenerationType.IDENTITY)
-  @Column(name="id")
+  @Column(name = "id")
   private Long id;
 
   @Column(name="name")

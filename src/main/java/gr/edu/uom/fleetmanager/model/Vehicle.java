@@ -9,7 +9,10 @@ public class Vehicle {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "licence_plate", nullable = false, unique = true)
+  @Column(name="id")
+  protected Long id;
+
+  @Column(name = "licence_plate")
   protected String licencePlate;
 
   @Column(name = "model")
