@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Employees</h1>
+      <hr>
+      <app-driver-list (onDelete)="onEmployeeDelete($event)" (onEdit)="onEmployeeEdit($event)"></app-driver-list>
+      <hr>
+      <button class="btn btn-success" (click)="createEmployee()">Add new Employee</button>
+    </div>
+  </div>
+</div>
+
+<app-delete-modal #deleteModal></app-delete-modal>
+<app-edit-driver-modal #editModal></app-edit-driver-modal>
+
+

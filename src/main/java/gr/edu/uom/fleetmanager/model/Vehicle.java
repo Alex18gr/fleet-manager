@@ -9,18 +9,18 @@ public class Vehicle {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "licence_plate")
-  private String licencePlate;
+  @Column(name = "licence_plate", nullable = false, unique = true)
+  protected String licencePlate;
 
   @Column(name = "model")
-  private String model;
+  protected String model;
 
   @Temporal(TemporalType.DATE)
   @Column(name = "model_year")
-  private Date modelYear;
+  protected Date modelYear;
 
   @Column(name = "kilometers")
-  private Integer kilometers;
+  protected Integer kilometers;
 
   public String getLicencePlate() {
     return licencePlate;

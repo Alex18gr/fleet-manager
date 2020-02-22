@@ -1,0 +1,70 @@
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" #modal
+     role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">{{title}}</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <!--        Angular Reactive Form -->
+        <form [formGroup]="employeeForm">
+
+          <div class="form-group">
+            <div class="form-group">
+              <label for="firstNameField">First Name</label>
+              <input [ngClass]="{'is-invalid': isInvalidControlCondition(employeeForm.controls.firstName)}"
+                type="text" class="form-control" id="firstNameField" formControlName="firstName">
+              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(employeeForm.controls.firstName)">
+                The field is required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="lastNameField">Last Name</label>
+              <input [ngClass]="{'is-invalid': isInvalidControlCondition(employeeForm.controls.lastName)}"
+                     type="text" class="form-control" id="lastNameField" formControlName="lastName">
+              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(employeeForm.controls.lastName)">
+                The field is required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="hireDateField">Hiring Date</label>
+              <input [ngClass]="{'is-invalid': isInvalidControlCondition(employeeForm.controls.dt_started)}"
+                     type="date" class="form-control" id="hireDateField" formControlName="dt_started">
+              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(employeeForm.controls.dt_started)">
+                The field is required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="stopDateField">Stopped Date</label>
+              <input [ngClass]="{'is-invalid': isInvalidControlCondition(employeeForm.controls.dt_stopped)}"
+                     type="date" class="form-control" id="stopDateField" formControlName="dt_stopped">
+              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(employeeForm.controls.dt_stopped)">
+                The field is required
+              </div>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="onSaveChanges()" [disabled]="savingData || employeeForm.invalid">
+          <ng-container *ngIf="savingData">
+            Saving Changes...<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          </ng-container>
+          <ng-container *ngIf="!savingData">Save changes</ng-container>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
