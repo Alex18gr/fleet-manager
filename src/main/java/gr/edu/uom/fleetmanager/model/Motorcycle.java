@@ -9,15 +9,19 @@ import java.util.Objects;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Motorcycle extends Vehicle {
 
-  @Column(name = "capability_seat")
-  private Integer capabilitySeat;
+  @Column(name="auto")
+  protected String auto;
 
-  public Integer getCapabilitySeat() {
-    return capabilitySeat;
+  public Motorcycle(){
+    super.setType("Motorcycle");
   }
 
-  public void setCapabilitySeat(Integer capabilitySeat) {
-    this.capabilitySeat = capabilitySeat;
+  public String getAuto() {
+    return auto;
+  }
+
+  public void setAuto(String auto) {
+    this.auto = auto;
   }
 
   @Override
@@ -26,11 +30,12 @@ public class Motorcycle extends Vehicle {
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;
     Motorcycle that = (Motorcycle) o;
-    return Objects.equals(capabilitySeat, that.capabilitySeat);
+    return Objects.equals(auto, that.auto);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), capabilitySeat);
+
+    return Objects.hash(super.hashCode(), auto);
   }
 }

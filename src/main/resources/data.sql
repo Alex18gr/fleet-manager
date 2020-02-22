@@ -11,14 +11,14 @@ INSERT INTO `client` values(8, 'Mark', 'Papadoloulos', '2011-11-08', 'Greek', 'E
 INSERT INTO `client` values(9, 'Nick', 'Smith', '2009-01-09', 'Greek', 'Egnatias 180', 'Thessaloniki', '2016-08-12', '2019-08-11');
 INSERT INTO `client` values(10, 'Helen', 'Right', '2015-01-09', 'Greek', 'Monastiraki 1', 'Athens', '2015-07-12', null);
 
-INSERT INTO `motorcycle` values(1, 'ADA 112', 'Yamaha', '1999-01-09', 1222, 2);
-INSERT INTO `motorcycle` values(2, 'RSX 223', 'SUZUKI', '2005-10-10', 2322, 2);
-INSERT INTO `motorcycle` values(3, 'TRE 765', 'HONDA', '1985-01-01', 19988, 2);
+INSERT INTO `motorcycle` values(1, 'Motorcycle', 'ADA 112', 'Yamaha', '1999-01-09', 1222, 2, 'YES');
+INSERT INTO `motorcycle` values(2, 'Motorcycle', 'RSX 223', 'SUZUKI', '2005-10-10', 2322, 2, 'YES');
+INSERT INTO `motorcycle` values(3, 'Motorcycle','TRE 765', 'HONDA', '1985-01-01', 19988, 2, 'NO');
 
-INSERT INTO `taxi` values(1, 'FDS 334', 'Nissan', '2005-05-09', 9885, 5);
-INSERT INTO `taxi` values(2, 'GHD 432', 'Nissan', '2017-10-10', 808, 5);
-INSERT INTO `taxi` values(3, 'TRE 765', 'SUZUKI', '2002-08-01', 10055, 5);
+INSERT INTO `taxi` values(1, 'Taxi', 'FDS 334', 'Nissan', '2005-05-09', 9885, 5, 3.3);
+INSERT INTO `taxi` values(2, 'Taxi', 'GHD 432', 'Nissan', '2017-10-10', 808, 5, 3.4);
+INSERT INTO `taxi` values(3, 'Taxi', 'TRE 765', 'SUZUKI', '2002-08-01', 10055, 5, 7.9);
 
-INSERT INTO `minivan` values(1, 'REW 765', 'Nissan', '2015-12-01', 5222, 12);
-INSERT INTO `minivan` values(2, 'BCV 987', 'Nissan', '2015-12-01', 4005, 12);
-INSERT INTO `minivan` values(3, 'JHG 456', 'Nissan', '2015-12-01', 3550, 12);
+INSERT INTO `minivan` values(1, 'MiniVan', 'REW 765', 'Nissan', '2015-12-01', 5222, 12, 'Yellow');
+INSERT INTO `minivan` values(2, 'MiniVan', 'BCV 987', 'Nissan', '2015-12-01', 4005, 12, 'Silver');
+INSERT INTO `minivan` values(3, 'MiniVan', 'JHG 456', 'Nissan', '2015-12-01', 3550, 12, 'Red');
