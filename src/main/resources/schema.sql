@@ -30,31 +30,37 @@ DROP TABLE IF EXISTS motorcycle;
 
 CREATE TABLE motorcycle (
   id INT AUTO_INCREMENT  PRIMARY KEY,
+  type VARCHAR(250) NOT NULL,
   licence_plate VARCHAR(250) NOT NULL UNIQUE,
   model VARCHAR(250) NOT NULL,
   model_year date DEFAULT NULL,
   kilometers INT,
-  capability_seat INT
+  capability_seat INT,
+  auto VARCHAR(10)
 );
 
 DROP TABLE IF EXISTS taxi;
 
 CREATE TABLE taxi (
   id INT AUTO_INCREMENT  PRIMARY KEY,
+  type VARCHAR(250) NOT NULL,
   licence_plate VARCHAR(250) NOT NULL UNIQUE,
   model VARCHAR(250) NOT NULL,
   model_year date DEFAULT NULL,
   kilometers INT,
-  capability_seat INT
+  capability_seat INT,
+  weight double
 );
 
 DROP TABLE IF EXISTS minivan;
 
 CREATE TABLE minivan (
   id INT AUTO_INCREMENT  PRIMARY KEY,
+  type VARCHAR(250) NOT NULL,
   licence_plate VARCHAR(250) NOT NULL UNIQUE,
   model VARCHAR(250) NOT NULL,
   model_year date DEFAULT NULL,
   kilometers INT,
-  capability_seat INT
+  capability_seat INT,
+  color VARCHAR(20)
 );

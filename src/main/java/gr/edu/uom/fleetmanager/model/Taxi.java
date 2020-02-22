@@ -9,16 +9,21 @@ import java.util.Objects;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Taxi extends Vehicle {
 
-  @Column(name = "capability_seat")
-  private Integer capabilitySeat;
+  @Column(name="weight")
+  protected Double weight;
 
-  public Integer getCapabilitySeat() {
-    return capabilitySeat;
+  public Taxi(){
+    super.setType("Taxi");
   }
 
-  public void setCapabilitySeat(Integer capabilitySeat) {
-    this.capabilitySeat = capabilitySeat;
+  public Double getWeight() {
+    return weight;
   }
+
+  public void setWeight(Double weight) {
+    this.weight = weight;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -26,11 +31,12 @@ public class Taxi extends Vehicle {
     if (o == null || getClass() != o.getClass()) return false;
     if (!super.equals(o)) return false;
     Taxi taxi = (Taxi) o;
-    return Objects.equals(capabilitySeat, taxi.capabilitySeat);
+    return Objects.equals(weight, taxi.weight);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), capabilitySeat);
+
+    return Objects.hash(super.hashCode(), weight);
   }
 }
