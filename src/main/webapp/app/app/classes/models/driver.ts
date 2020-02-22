@@ -1,5 +1,9 @@
 export class Driver {
   id: number;
-  firstName: string;
+  name: string;
   lastName: string;
+  dtReceived: Date;
+  nationality: string;
+  address: string;
+  city: string;
 }

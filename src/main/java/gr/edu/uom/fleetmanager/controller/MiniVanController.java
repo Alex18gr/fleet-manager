@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/minivan")
+@CrossOrigin(value = "http://localhost:4200", maxAge = 3600)
 public class MiniVanController {
 
   @Autowired

@@ -10,6 +10,7 @@ import { DriverListComponent } from './driver/driver-list/driver-list.component'
 import { DeleteModalComponent } from './shared/delete-modal/delete-modal.component';
 import { EditDriverModalComponent } from './shared/edit-driver-modal/edit-driver-modal.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {ReactiveFormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

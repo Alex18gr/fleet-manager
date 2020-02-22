@@ -1,6 +1,7 @@
 import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {DriverEmployee} from "../../classes/models/driver-employee";
 import {Driver} from "../../classes/models/driver";
+import {DriverService} from "../../driver/driver.service";
 
 declare var $: any;
 
@@ -11,14 +12,14 @@ declare var $: any;
 })
 export class DeleteModalComponent implements OnInit {
   @ViewChild('modal', {static: false}) deleteModal: ElementRef;
-  // @Output() editFormSubmitted = new EventEmitter<>();
+  @Output() editFormSubmitted = new EventEmitter<any>();
   deletingData = false;
   // deleteClassroomMode = false;
-  deletingComponent: Driver;
+  deletingComponent: Driver | DriverEmployee;
   title = '';
   message = '';
 
-  constructor() { }
+  constructor(private driverService: DriverService) { }
 
   ngOnInit(): void {
   }
@@ -28,8 +29,8 @@ export class DeleteModalComponent implements OnInit {
    */
   showDriverEmployeeDeleteModal(component: DriverEmployee) {
     this.deletingComponent = component;
-    this.title = 'Delete Driver Employee ' + this.deletingComponent.firstName; + ' ' + this.deletingComponent.lastName;
-    this.message = 'Are you sure you want to delete Employee' + this.deletingComponent.firstName; +
+    this.title = 'Delete Driver Employee ' + this.deletingComponent.name; + ' ' + this.deletingComponent.lastName;
+    this.message = 'Are you sure you want to delete Employee' + this.deletingComponent.name; +
       ' ' + this.deletingComponent.lastName + '?';
     $(this.deleteModal.nativeElement).modal();
   }
@@ -58,6 +59,9 @@ export class DeleteModalComponent implements OnInit {
   }
 
   onDelete() {
-
+    this.driverService.deleteEmployeeDriver(this.deletingComponent as DriverEmployee).subscribe(data => {
+      this.editFormSubmitted.emit(data);
+      this.hideModal();
+    })
   }
 }
