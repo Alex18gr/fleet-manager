@@ -9,6 +9,9 @@ public class Vehicle {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name="id")
+  private Long id;
+
   @Column(name = "licence_plate")
   private String licencePlate;
 

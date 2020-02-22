@@ -29,7 +29,8 @@ CREATE TABLE client (
 DROP TABLE IF EXISTS motorcycle;
 
 CREATE TABLE motorcycle (
-  licence_plate VARCHAR(250) NOT NULL PRIMARY KEY,
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  licence_plate VARCHAR(250) NOT NULL UNIQUE,
   model VARCHAR(250) NOT NULL,
   model_year date DEFAULT NULL,
   kilometers INT,
@@ -39,7 +40,8 @@ CREATE TABLE motorcycle (
 DROP TABLE IF EXISTS taxi;
 
 CREATE TABLE taxi (
-  licence_plate VARCHAR(250) NOT NULL PRIMARY KEY,
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  licence_plate VARCHAR(250) NOT NULL UNIQUE,
   model VARCHAR(250) NOT NULL,
   model_year date DEFAULT NULL,
   kilometers INT,
@@ -49,7 +51,8 @@ CREATE TABLE taxi (
 DROP TABLE IF EXISTS minivan;
 
 CREATE TABLE minivan (
-  licence_plate VARCHAR(250) NOT NULL PRIMARY KEY,
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  licence_plate VARCHAR(250) NOT NULL UNIQUE,
   model VARCHAR(250) NOT NULL,
   model_year date DEFAULT NULL,
   kilometers INT,

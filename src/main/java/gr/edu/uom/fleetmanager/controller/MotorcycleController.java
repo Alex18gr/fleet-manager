@@ -3,10 +3,11 @@ package gr.edu.uom.fleetmanager.controller;
 import gr.edu.uom.fleetmanager.model.Motorcycle;
 import gr.edu.uom.fleetmanager.service.MotorcycleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+import java.util.List;
+
+@RestController
 @RequestMapping("/motorcycle")
 public class MotorcycleController {
 
@@ -18,9 +19,13 @@ public class MotorcycleController {
     return motorcycleService.getMotorcycleByLicencePlate(licencePlate);
   }
 
+  @GetMapping(path = "/all")
+  public List<Motorcycle> getAllClients() {
+    return motorcycleService.getAllMotorcycles();
+  }
+
   @PostMapping("")
   public Motorcycle createMotorcycle(@RequestBody Motorcycle motorcycle) {
-    motorcycle.setLicencePlate(null);
     return motorcycleService.saveMotorcycle(motorcycle);
   }
 
