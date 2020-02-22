@@ -11,6 +11,9 @@ import { DeleteModalComponent } from './shared/delete-modal/delete-modal.compone
 import { EditDriverModalComponent } from './shared/edit-driver-modal/edit-driver-modal.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { VehicleComponent } from './vehicle/vehicle/vehicle.component';
+import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.component';
+import { VehicleDetailsComponent } from './vehicle/vehicle-details/vehicle-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import {HttpClientModule} from "@angular/common/http";
     DriverComponent,
     DriverListComponent,
     DeleteModalComponent,
-    EditDriverModalComponent
+    EditDriverModalComponent,
+    VehicleComponent,
+    VehicleListComponent,
+    VehicleDetailsComponent
   ],
   imports: [
     BrowserModule,

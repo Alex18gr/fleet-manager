@@ -1,0 +1,30 @@
+<table class="table table-hover" *ngIf="vehicleList">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Type</th>
+    <th scope="col">Licence Plate</th>
+    <th scope="col">Model</th>
+    <th scope="col">Model Year</th>
+    <th scope="col">Kilometers</th>
+    <th scope="col">Seats</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let v of vehicleList; let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{v.type}}</td>
+    <td>{{v.licencePlate}}</td>
+    <td>{{v.model}}</td>
+    <td>{{v.modelYear | date}}</td>
+    <td>{{v.kilometers}}</td>
+    <td>{{v.capabilitySeat}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteVehicle(v)">Delete</button>
+      <button class="btn btn-primary" (click)="editVehicle(v)">Edit</button>
+      <button class="btn btn-secondary" (click)="vehicleDetails(v)">Details</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
