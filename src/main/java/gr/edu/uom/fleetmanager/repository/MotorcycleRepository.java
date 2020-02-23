@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MotorcycleRepository extends CrudRepository<Motorcycle, String> {
+public interface MotorcycleRepository extends CrudRepository<Motorcycle, Long> {
   List<Motorcycle> findAll();
 }

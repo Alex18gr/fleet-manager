@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface MiniVanRepository extends JpaRepository<MiniVan, String> {
+public interface MiniVanRepository extends JpaRepository<MiniVan, Long> {
   List<MiniVan> findAll();
 
 

@@ -10,8 +10,8 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'drivers', component: DriverComponent},
   {path: 'vehicles', children: [
-      {path: '', component: VehicleComponent},
-      {path: ':id', component: VehicleDetailsComponent}
+      {path: '', component: VehicleComponent}
+      // {path: ':id', component: VehicleDetailsComponent}
     ]}
 ];
 

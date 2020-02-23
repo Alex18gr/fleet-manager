@@ -15,9 +15,9 @@ public class MotorcycleController {
   @Autowired
   private MotorcycleService motorcycleService;
 
-  @GetMapping("/{licencePlate}")
-  public Motorcycle getMotorcycle(@PathVariable String licencePlate) {
-    return motorcycleService.getMotorcycleByLicencePlate(licencePlate);
+  @GetMapping("/{id}")
+  public Motorcycle getMotorcycle(@PathVariable Long id) {
+    return motorcycleService.getMotorcycleByLicencePlate(id);
   }
 
   @GetMapping(path = "/all")
@@ -35,9 +35,9 @@ public class MotorcycleController {
     return motorcycleService.saveMotorcycle(motorcycle);
   }
 
-  @DeleteMapping("/{licencePlate}")
-  public void deleteMotorcycle(@PathVariable String licencePlate) {
-    motorcycleService.deleteMotorcycle(licencePlate);
+  @DeleteMapping("/{id}")
+  public void deleteMotorcycle(@PathVariable Long id) {
+    motorcycleService.deleteMotorcycle(id);
   }
 
 }

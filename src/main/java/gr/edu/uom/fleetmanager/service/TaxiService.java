@@ -17,15 +17,15 @@ public class TaxiService {
     return taxiRepository.findAll();
   }
 
-  public Taxi getTaxiByLicencePlate(String licencePlate) {
-    return taxiRepository.findById(licencePlate).orElse(null);
-  }
-
   public Taxi saveTaxi(Taxi taxi) {
     return taxiRepository.save(taxi);
   }
 
-  public void deleteTaxi(String licencePlate) {
-    taxiRepository.deleteById(licencePlate);
+  public void deleteTaxi(Long id) {
+    taxiRepository.deleteById(id);
+  }
+
+  public Taxi getTaxiById(Long id) {
+    return this.taxiRepository.findById(id).orElseThrow(RuntimeException::new);
   }
 }

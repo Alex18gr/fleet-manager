@@ -15,9 +15,9 @@ public class MiniVanController {
   @Autowired
   private MiniVanService miniVanService;
 
-  @GetMapping("/{licencePlate}")
-  public MiniVan getMiniVan(@PathVariable String licencePlate) {
-    return miniVanService.getMIniVanByLicencePlate(licencePlate);
+  @GetMapping("/{id}")
+  public MiniVan getMiniVan(@PathVariable Long id) {
+    return miniVanService.getMIniVanByLicencePlate(id);
   }
 
   @GetMapping(path = "/all")
@@ -35,9 +35,9 @@ public class MiniVanController {
     return miniVanService.saveMiniVan(miniVan);
   }
 
-  @DeleteMapping("/{licencePlate}")
-  public void deleteMiniVan(@PathVariable String licencePlate) {
-    miniVanService.deleteMiniVan(licencePlate);
+  @DeleteMapping("/{id}")
+  public void deleteMiniVan(@PathVariable Long id) {
+    miniVanService.deleteMiniVan(id);
   }
 
 }

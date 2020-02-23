@@ -15,9 +15,9 @@ public class TaxiController {
   @Autowired
   private TaxiService taxiService;
 
-  @GetMapping("/{licencePlate}")
-  public Taxi getTaxi(@PathVariable String licencePlate) {
-    return taxiService.getTaxiByLicencePlate(licencePlate);
+  @GetMapping("/{id}")
+  public Taxi getTaxi(@PathVariable Long id) {
+    return taxiService.getTaxiById(id);
   }
 
   @GetMapping(path = "/all")
@@ -35,9 +35,9 @@ public class TaxiController {
     return taxiService.saveTaxi(taxi);
   }
 
-  @DeleteMapping("/{licencePlate}")
-  public void deleteTaxi(@PathVariable String licencePlate) {
-    taxiService.deleteTaxi(licencePlate);
+  @DeleteMapping("/{id}")
+  public void deleteTaxi(@PathVariable Long id) {
+    taxiService.deleteTaxi(id);
   }
 
 }

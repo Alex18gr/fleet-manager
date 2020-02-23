@@ -17,15 +17,15 @@ public class MotorcycleService {
     return motorcycleRepository.findAll();
   }
 
-  public Motorcycle getMotorcycleByLicencePlate(String licencePlate) {
-    return motorcycleRepository.findById(licencePlate).orElse(null);
+  public Motorcycle getMotorcycleByLicencePlate(Long id) {
+    return motorcycleRepository.findById(id).orElse(null);
   }
 
   public Motorcycle saveMotorcycle(Motorcycle motorcycle) {
     return motorcycleRepository.save(motorcycle);
   }
 
-  public void deleteMotorcycle(String licencePlate) {
-    motorcycleRepository.deleteById(licencePlate);
+  public void deleteMotorcycle(Long id) {
+    motorcycleRepository.deleteById(id);
   }
 }

@@ -32,7 +32,7 @@ export class DriverComponent implements OnInit {
     this.editModal.showModal();
   }
 
-  private getData() {
+  getData() {
     this.employeeList = null;
     this.driverService.getAllEmployeeDrivers().subscribe(data => {
       this.employeeList = data;

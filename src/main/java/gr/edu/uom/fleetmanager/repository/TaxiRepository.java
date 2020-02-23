@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TaxiRepository extends CrudRepository<Taxi, String> {
+public interface TaxiRepository extends CrudRepository<Taxi, Long> {
   List<Taxi> findAll();
 }

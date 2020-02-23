@@ -17,15 +17,15 @@ public class MiniVanService {
     return miniVanRepository.findAll();
   }
 
-  public MiniVan getMIniVanByLicencePlate(String licencePlate) {
-    return miniVanRepository.findById(licencePlate).orElse(null);
+  public MiniVan getMIniVanByLicencePlate(Long id) {
+    return miniVanRepository.findById(id).orElse(null);
   }
 
   public MiniVan saveMiniVan(MiniVan miniVan) {
     return miniVanRepository.save(miniVan);
   }
 
-  public void deleteMiniVan(String licencePlate) {
-    miniVanRepository.deleteById(licencePlate);
+  public void deleteMiniVan(Long id) {
+    miniVanRepository.deleteById(id);
   }
 }

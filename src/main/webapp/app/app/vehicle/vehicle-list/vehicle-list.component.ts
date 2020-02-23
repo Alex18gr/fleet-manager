@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Vehicle} from "../../classes/vehicle";
 import {DriverEmployee} from "../../classes/models/driver-employee";
 import {ActivatedRoute, Router} from "@angular/router";
+import {VehicleService} from "../vehicle.service";
 
 @Component({
   selector: 'app-vehicle-list',
@@ -14,7 +15,8 @@ export class VehicleListComponent implements OnInit {
   @Input() vehicleList: Vehicle[];
 
   constructor(private router: Router,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private vehicleService: VehicleService) { }
 
   ngOnInit(): void {
   }
@@ -28,6 +30,6 @@ export class VehicleListComponent implements OnInit {
   }
 
   vehicleDetails(v: Vehicle) {
-    this.router.navigate([v.id], {relativeTo: this.route});
+    // this.router.navigate([v.id], {relativeTo: this.route, queryParams: {t: this.vehicleService.getTypeEnum(v.type)}});
   }
 }
