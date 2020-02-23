@@ -30,6 +30,6 @@ export class VehicleListComponent implements OnInit {
   }
 
   vehicleDetails(v: Vehicle) {
-    // this.router.navigate([v.id], {relativeTo: this.route, queryParams: {t: this.vehicleService.getTypeEnum(v.type)}});
+    this.router.navigate([v.id], {relativeTo: this.route, queryParams: {t: this.vehicleService.getTypeEnum(v.type)}});
   }
 }

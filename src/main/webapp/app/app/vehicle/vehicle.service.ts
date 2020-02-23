@@ -15,7 +15,9 @@ export class VehicleService {
     return this.http.get<Vehicle[]>(this.api_path + 'vehicle/all');
   }
 
-  getVehicleDetails
+  getVehicleDetails(id: number, type: VehicleType): Observable<Vehicle> {
+    return this.http.get<Vehicle>(this.api_path + this.getVehicleUrl(type) + '/' + id);
+  }
 
   getTypeEnum(type: string): VehicleType {
     switch (type) {
@@ -27,6 +29,19 @@ export class VehicleService {
         return VehicleType.TAXI;
       default:
         return VehicleType.NONE;
+    }
+  }
+
+  getVehicleUrl(type: VehicleType): string {
+    switch (type) {
+      case VehicleType.MINI_VAN:
+        return 'minivan/';
+      case VehicleType.MOTORCYCLE:
+        return 'motorcycle/';
+      case VehicleType.TAXI:
+        return 'taxi/';
+      default:
+        return '';
     }
   }
 }

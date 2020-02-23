@@ -1,1 +1,49 @@
-<p>vehicle-details works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="currentVehicle">
+        <h1>Vehicle Details</h1>
+        <hr>
+
+        <div>
+          <h4>Model - Year</h4>
+          <span>{{currentVehicle.model}} - {{currentVehicle.modelYear}}</span>
+        </div>
+        <div>
+          <h4>Plate</h4>
+          <span>{{currentVehicle.licencePlate}}</span>
+        </div>
+        <div>
+          <h4>Kilometers</h4>
+          <span>{{currentVehicle.kilometers}}</span>
+        </div>
+        <div>
+          <h4>Seats</h4>
+          <span>{{currentVehicle.capabilitySeat}}</span>
+        </div>
+        <div>
+          <h4>Type</h4>
+          <span>{{currentVehicle.type}}</span>
+        </div>
+
+        <div *ngIf="checkType(VehicleType.TAXI)">
+          <h4>Weight</h4>
+          <span>{{currentVehicle.weight}}</span>
+        </div>
+
+        <div *ngIf="checkType(VehicleType.MOTORCYCLE)">
+          <h4>Weight</h4>
+          <span>{{currentVehicle.auto}}</span>
+        </div>
+
+        <div *ngIf="checkType(VehicleType.MINI_VAN)">
+          <h4>Weight</h4>
+          <span>{{currentVehicle.color}}</span>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
