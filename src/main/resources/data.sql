@@ -22,3 +22,8 @@ INSERT INTO `taxi` values(3, 'Taxi', 'TRE 765', 'SUZUKI', '2002-08-01', 10055, 5
 INSERT INTO `minivan` values(1, 'MiniVan', 'REW 765', 'Nissan', '2015-12-01', 5222, 12, 'Yellow');
 INSERT INTO `minivan` values(2, 'MiniVan', 'BCV 987', 'Nissan', '2015-12-01', 4005, 12, 'Silver');
 INSERT INTO `minivan` values(3, 'MiniVan', 'JHG 456', 'Nissan', '2015-12-01', 3550, 12, 'Red');
+
+INSERT INTO `route` values(1, 1, null, 1, null, null, 'Trikala');
+INSERT INTO `route` values(2, 3, null, null, 2, null, 'Athens');
+INSERT INTO `route` values(3, 4, null, 3, null, null, 'Rome');
+INSERT INTO `route` values(4, 5, null, null, null, 2, 'Komotini');
