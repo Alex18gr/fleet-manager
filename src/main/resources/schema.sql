@@ -64,3 +64,21 @@ CREATE TABLE minivan (
   capability_seat INT,
   color VARCHAR(20)
 );
+
+
+DROP TABLE IF EXISTS route;
+
+CREATE TABLE route (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  employee_id INT,
+  client_id INT,
+  minivan_id INT,
+  motorcycle_id INT,
+  taxi_id INT,
+  destination VARCHAR(250),
+  FOREIGN KEY (employee_id) REFERENCES employee(id),
+  FOREIGN KEY (client_id) REFERENCES client(id),
+  FOREIGN KEY (minivan_id) REFERENCES minivan(id),
+  FOREIGN KEY (motorcycle_id) REFERENCES motorcycle(id),
+  FOREIGN KEY (taxi_id) REFERENCES taxi(id)
+);
