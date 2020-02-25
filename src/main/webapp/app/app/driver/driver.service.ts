@@ -33,6 +33,6 @@ export class DriverService {
   }
 
   getDriversTotalRoutes(): Observable<{fullName: string, totalRoutes: number}[]> {
-    return this.http.get<{fullName: string, totalRoutes: number}[]>(this.api_path + 'driver/');
+    return this.http.get<{fullName: string, totalRoutes: number}[]>(this.api_path + 'driver/statistics');
   }
 }
