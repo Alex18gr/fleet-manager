@@ -12,79 +12,30 @@
       <div class="modal-body">
 
         <!--        Angular Reactive Form -->
-        <form [formGroup]="employeeForm">
+        <form [formGroup]="routeForm" *ngIf="dataLoaded">
 
           <div class="form-group">
             <div class="form-group">
-              <label for="firstNameField">First Name</label>
-              <input [ngClass]="{'is-invalid': isInvalidControlCondition(employeeForm.controls.name)}"
-                     type="text" class="form-control" id="firstNameField" formControlName="name">
-              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(employeeForm.controls.name)">
+              <label for="DestinationField">Destination</label>
+              <input [ngClass]="{'is-invalid': isInvalidControlCondition(routeForm.controls.destination)}"
+                     type="text" class="form-control" id="DestinationField" formControlName="destination">
+              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(routeForm.controls.destination)">
                 The field is required
               </div>
             </div>
 
             <div class="form-group">
-              <label for="lastNameField">Last Name</label>
-              <input [ngClass]="{'is-invalid': isInvalidControlCondition(employeeForm.controls.lastName)}"
-                     type="text" class="form-control" id="lastNameField" formControlName="lastName">
-              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(employeeForm.controls.lastName)">
-                The field is required
-              </div>
+              <label for="DriverSelect">Driver</label>
+              <select class="form-control" id="DriverSelect" formControlName="d_row">
+                <option *ngFor="let d of driversList; let i = index" [value]="i">{{d.name}} {{d.lastName}}</option>
+              </select>
             </div>
 
             <div class="form-group">
-              <label for="receivedDateField">Driver License Received Date</label>
-              <input [ngClass]="{'is-invalid': isInvalidControlCondition(employeeForm.controls.dtReceived)}"
-                     type="date" class="form-control" id="receivedDateField" formControlName="dtReceived">
-              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(employeeForm.controls.dtReceived)">
-                The field is required
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="nationalityField">Nationality</label>
-              <input [ngClass]="{'is-invalid': isInvalidControlCondition(employeeForm.controls.nationality)}"
-                     type="text" class="form-control" id="nationalityField" formControlName="nationality">
-              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(employeeForm.controls.nationality)">
-                The field is required
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="addressField">Address</label>
-              <input [ngClass]="{'is-invalid': isInvalidControlCondition(employeeForm.controls.address)}"
-                     type="text" class="form-control" id="addressField" formControlName="address">
-              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(employeeForm.controls.address)">
-                The field is required
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="cityField">City</label>
-              <input [ngClass]="{'is-invalid': isInvalidControlCondition(employeeForm.controls.city)}"
-                     type="text" class="form-control" id="cityField" formControlName="city">
-              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(employeeForm.controls.city)">
-                The field is required
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="hireDateField">Hiring Date</label>
-              <input [ngClass]="{'is-invalid': isInvalidControlCondition(employeeForm.controls.dtStarted)}"
-                     type="date" class="form-control" id="hireDateField" formControlName="dtStarted">
-              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(employeeForm.controls.dtStarted)">
-                The field is required
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="stopDateField">Stopped Date</label>
-              <input [ngClass]="{'is-invalid': isInvalidControlCondition(employeeForm.controls.dtStopped)}"
-                     type="date" class="form-control" id="stopDateField" formControlName="dtStopped">
-              <div class="invalid-feedback" *ngIf="isInvalidControlCondition(employeeForm.controls.dtStopped)">
-                The field is required
-              </div>
+              <label for="VehicleSelect">Vehicle</label>
+              <select class="form-control" id="VehicleSelect" formControlName="v_row">
+                <option *ngFor="let v of vehiclesList; let i = index" [value]="i">{{v.licencePlate}}</option>
+              </select>
             </div>
 
           </div>
@@ -94,7 +45,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="onSaveChanges()" [disabled]="savingData || employeeForm.invalid">
+        <button type="button" class="btn btn-primary" (click)="onSaveChanges()" [disabled]="savingData">
           <ng-container *ngIf="savingData">
             Saving Changes...<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           </ng-container>

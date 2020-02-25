@@ -5,6 +5,10 @@ import {DriverService} from "../../driver/driver.service";
 import * as moment from "moment";
 import {Route} from "../../classes/route";
 import {RouteService} from "../route.service";
+import { forkJoin } from 'rxjs';
+import {Vehicle} from "../../classes/vehicle";
+import {VehicleService} from "../../vehicle/vehicle.service";
+import {Driver} from "../../classes/models/driver";
 
 declare var $: any;
 
@@ -17,13 +21,18 @@ export class RouteModalComponent implements OnInit {
 
   @ViewChild('modal', {static: false}) editModal: ElementRef;
   @Output() editFormSubmitted = new EventEmitter<DriverEmployee>();
+  driversList: Driver[];
+  vehiclesList: Vehicle[];
   routeForm: FormGroup;
   savingData = false;
   editMode = false;
   currentRoute: Route;
+  dataLoaded = false;
   title = '';
 
-  constructor(private routeService: RouteService) { }
+  constructor(private routeService: RouteService,
+              private driverService: DriverService,
+              private vehicleService: VehicleService) { }
 
   ngOnInit() {
     this.initForm();
@@ -33,12 +42,17 @@ export class RouteModalComponent implements OnInit {
    * initialize the edit classroom form besed on the optional provided classroom or for a new classroom
    */
   initForm(route?: Route) {
+    this.dataLoaded = false;
     this.routeForm = new FormGroup({
       id: new FormControl('', Validators.required),
       d_row: new FormControl('', Validators.required),
       v_row: new FormControl('', Validators.required),
       destination: new FormControl('', Validators.required)
     });
+
+    this.getDriverAndVehicleData();
+
+
     // if (employee) {
     //   this.currentEmployee = employee;
     //   this.employeeForm.setValue({
@@ -62,10 +76,10 @@ export class RouteModalComponent implements OnInit {
   showModal(route?: Route) {
     $(this.editModal.nativeElement).modal();
     if (route) {
-      this.title = 'Edit Employee';
+      this.title = 'Edit Route';
       this.editMode = true;
     } else {
-      this.title = 'Create new Employee';
+      this.title = 'Create new Route';
       this.editMode = false;
     }
     this.initForm(route);
@@ -109,4 +123,19 @@ export class RouteModalComponent implements OnInit {
     // }
   }
 
+  getDriverAndVehicleData() {
+    forkJoin(
+      // as of RxJS 6.5+ we can use a dictionary of sources
+      {
+        vehicles: this.vehicleService.getAllVehicles(),
+        drivers: this.driverService.getAllDrivers()
+      }
+    )
+      // { google: object, microsoft: object, users: array }
+      .subscribe(data => {
+        this.driversList = data.drivers;
+        this.vehiclesList = data.vehicles;
+        this.dataLoaded = true;
+      });
+  }
 }

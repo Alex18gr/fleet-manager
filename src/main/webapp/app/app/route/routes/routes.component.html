@@ -7,8 +7,11 @@
         <app-route-list [routesList]="routesList"></app-route-list>
       </div>
       <div>
-        <button class="btn btn-success">Add New Route</button>
+        <button class="btn btn-success" (click)="createRoute()">Add New Route</button>
       </div>
     </div>
   </div>
 </div>
+
+<app-route-modal #editModal (editFormSubmitted)="getData()"></app-route-modal>
+

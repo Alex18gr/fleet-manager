@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {DriverEmployee} from "../classes/models/driver-employee";
+import {Driver} from "../classes/models/driver";
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +26,9 @@ export class DriverService {
 
   deleteEmployeeDriver(driverEmployee: DriverEmployee): Observable<any> {
     return this.http.delete(this.api_path + 'employee/' + driverEmployee.id);
+  }
+
+  getAllDrivers(): Observable<Driver[]> {
+    return this.http.get<Driver[]>(this.api_path + 'driver/all');
   }
 }
