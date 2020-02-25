@@ -117,6 +117,8 @@ export class RouteModalComponent implements OnInit {
     }).subscribe(data => {
       console.log(data);
       this.savingData = false;
+      this.editFormSubmitted.emit(data);
+      this.hideModal();
     })
 
     // console.log(this.employeeForm);

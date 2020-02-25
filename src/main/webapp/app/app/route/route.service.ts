@@ -16,6 +16,6 @@ export class RouteService {
   }
 
   getAllRoutes() {
-
+    return this.http.get<Route[]>(this.api_path + 'route/all')
   }
 }
