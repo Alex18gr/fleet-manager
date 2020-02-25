@@ -14,6 +14,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { VehicleComponent } from './vehicle/vehicle/vehicle.component';
 import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.component';
 import { VehicleDetailsComponent } from './vehicle/vehicle-details/vehicle-details.component';
+import { VehicleFormComponent } from './vehicle/vehicle-form/vehicle-form.component';
+import { EditVehicleModalComponent } from './shared/edit-vehicle-modal/edit-vehicle-modal.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { VehicleDetailsComponent } from './vehicle/vehicle-details/vehicle-detai
     EditDriverModalComponent,
     VehicleComponent,
     VehicleListComponent,
-    VehicleDetailsComponent
+    VehicleDetailsComponent,
+    VehicleFormComponent,
+    EditVehicleModalComponent
   ],
   imports: [
     BrowserModule,
