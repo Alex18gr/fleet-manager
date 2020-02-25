@@ -6,6 +6,7 @@ import gr.edu.uom.fleetmanager.service.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -22,8 +23,13 @@ public class RouteController {
   }
 
   @GetMapping(path = "/all")
-  public List<Route> getAllRoutes() {
-    return routeService.getAllRoutes();
+  public List<PostRouteDto> getAllRoutes() {
+
+    List<PostRouteDto> postRouteDtos = new ArrayList<>();
+
+    routeService.getAllRoutes().forEach(r -> postRouteDtos.add(new PostRouteDto(r)));
+
+    return  postRouteDtos;
   }
 
 //  @PostMapping("")
