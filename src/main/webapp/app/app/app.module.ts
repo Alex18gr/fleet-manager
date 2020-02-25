@@ -16,6 +16,9 @@ import { VehicleListComponent } from './vehicle/vehicle-list/vehicle-list.compon
 import { VehicleDetailsComponent } from './vehicle/vehicle-details/vehicle-details.component';
 import { VehicleFormComponent } from './vehicle/vehicle-form/vehicle-form.component';
 import { EditVehicleModalComponent } from './shared/edit-vehicle-modal/edit-vehicle-modal.component';
+import { RoutesComponent } from './route/routes/routes.component';
+import { RouteModalComponent } from './route/route-modal/route-modal.component';
+import { RouteListComponent } from './route/route-list/route-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { EditVehicleModalComponent } from './shared/edit-vehicle-modal/edit-vehi
     VehicleListComponent,
     VehicleDetailsComponent,
     VehicleFormComponent,
-    EditVehicleModalComponent
+    EditVehicleModalComponent,
+    RoutesComponent,
+    RouteModalComponent,
+    RouteListComponent
   ],
   imports: [
     BrowserModule,

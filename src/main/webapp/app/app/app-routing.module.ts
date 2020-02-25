@@ -4,6 +4,7 @@ import {HomeComponent} from "./home/home/home.component";
 import {DriverComponent} from "./driver/driver/driver.component";
 import {VehicleComponent} from "./vehicle/vehicle/vehicle.component";
 import {VehicleDetailsComponent} from "./vehicle/vehicle-details/vehicle-details.component";
+import {RoutesComponent} from "./route/routes/routes.component";
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'vehicles', children: [
       {path: '', component: VehicleComponent},
       {path: ':id', component: VehicleDetailsComponent}
-    ]}
+    ]},
+  {path: 'routes', component: RoutesComponent}
 ];
 
 @NgModule({
