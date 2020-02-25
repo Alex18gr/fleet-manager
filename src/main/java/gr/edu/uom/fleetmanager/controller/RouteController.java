@@ -16,27 +16,27 @@ public class RouteController {
   private RouteService routeService;
 
   @GetMapping("/{id}")
-  public Route getTaxi(@PathVariable Long id) {
+  public Route getRoute(@PathVariable Long id) {
     return routeService.getRouteById(id);
   }
 
   @GetMapping(path = "/all")
-  public List<Route> getAllClients() {
+  public List<Route> getAllRoutes() {
     return routeService.getAllRoutes();
   }
 
   @PostMapping("")
-  public Route createTaxi(@RequestBody Route taxi) {
-    return routeService.saveRoute(taxi);
+  public Route createRoute(@RequestBody Route route) {
+    return routeService.saveRoute(route);
   }
 
   @PutMapping("")
-  public Route updateTaxi(@RequestBody Route taxi) {
-    return routeService.saveRoute(taxi);
+  public Route updateRoute(@RequestBody Route route) {
+    return routeService.saveRoute(route);
   }
 
   @DeleteMapping("/{id}")
-  public void deleteTaxi(@PathVariable Long id) {
+  public void deleteRoute(@PathVariable Long id) {
     routeService.deleteRoute(id);
   }
 

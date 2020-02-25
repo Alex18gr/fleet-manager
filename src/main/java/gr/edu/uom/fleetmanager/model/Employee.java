@@ -19,6 +19,9 @@ public class Employee extends Driver {
   @Column(name="dt_stopped")
   private Date dtStopped;
 
+  public Employee(){
+    super.setType("Employee");
+  }
 
   public Date getDtStarted() {
     return dtStarted;

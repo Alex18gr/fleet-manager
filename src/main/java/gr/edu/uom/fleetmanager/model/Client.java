@@ -18,6 +18,9 @@ public class Client extends Driver {
   @Column(name = "end_booking")
   private Date endDateBooking;
 
+  public Client(){
+    super.setType("Client");
+  }
 
   public Date getStartDateBooking() {
     return startDateBooking;
