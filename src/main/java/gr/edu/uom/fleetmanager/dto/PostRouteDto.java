@@ -1,5 +1,7 @@
 package gr.edu.uom.fleetmanager.dto;
 
+import gr.edu.uom.fleetmanager.model.Route;
+
 /**
  * POJO used to create a new route,
  * containing the minimum required elements
@@ -17,6 +19,36 @@ public class PostRouteDto {
   private String v_plate;
 
   public PostRouteDto() {
+  }
+
+  public PostRouteDto(Route route) {
+
+    if(route.getEmployee() != null){
+      this.d_id = route.getEmployee().getId();
+      this.d_type = route.getEmployee().getType();
+      this.d_full_name = route.getEmployee().getName() + " " + route.getEmployee().getLastName();
+    } else if(route.getClient() != null){
+      this.d_id = route.getClient().getId();
+      this.d_type = route.getClient().getType();
+      this.d_full_name = route.getClient().getName() + " " + route.getClient().getLastName();
+    }
+
+    if(route.getMotorcycle() != null){
+      this.v_id = route.getMotorcycle().getId();
+      this.v_type = route.getMotorcycle().getType();
+      this.v_plate= route.getMotorcycle().getLicencePlate();
+    } else if(route.getMiniVan() != null){
+      this.v_id = route.getMiniVan().getId();
+      this.v_type = route.getMiniVan().getType();
+      this.v_plate= route.getMiniVan().getLicencePlate();
+    } else if(route.getTaxi() != null){
+      this.v_id = route.getTaxi().getId();
+      this.v_type = route.getTaxi().getType();
+      this.v_plate= route.getTaxi().getLicencePlate();
+    }
+
+    this.destination = route.getDestination();
+
   }
 
   public Long getD_id() {
