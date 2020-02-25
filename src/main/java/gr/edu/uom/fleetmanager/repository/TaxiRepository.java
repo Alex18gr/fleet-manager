@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface TaxiRepository extends CrudRepository<Taxi, Long> {
   List<Taxi> findAll();
+
+  Taxi findOneById(Long id);
 }
