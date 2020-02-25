@@ -9,6 +9,6 @@ import java.util.List;
 public interface MiniVanRepository extends JpaRepository<MiniVan, Long> {
   List<MiniVan> findAll();
 
-
+  MiniVan findOneById(Long id);
 
 }

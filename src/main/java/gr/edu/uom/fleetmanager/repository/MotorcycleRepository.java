@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface MotorcycleRepository extends CrudRepository<Motorcycle, Long> {
   List<Motorcycle> findAll();
+
+  Motorcycle findOneById(Long id);
 }

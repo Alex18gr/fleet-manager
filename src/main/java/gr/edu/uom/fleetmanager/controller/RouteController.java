@@ -1,5 +1,6 @@
 package gr.edu.uom.fleetmanager.controller;
 
+import gr.edu.uom.fleetmanager.dto.PostRouteDto;
 import gr.edu.uom.fleetmanager.model.Route;
 import gr.edu.uom.fleetmanager.service.RouteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +26,10 @@ public class RouteController {
     return routeService.getAllRoutes();
   }
 
-  @PostMapping("")
-  public Route createRoute(@RequestBody Route route) {
-    return routeService.saveRoute(route);
-  }
+//  @PostMapping("")
+//  public Route createRoute(@RequestBody Route route) {
+//    return routeService.saveRoute(route);
+//  }
 
   @PutMapping("")
   public Route updateRoute(@RequestBody Route route) {
@@ -40,4 +41,8 @@ public class RouteController {
     routeService.deleteRoute(id);
   }
 
+  @PostMapping("")
+  public Route createRoute(@RequestBody PostRouteDto postRouteDto) {
+    return routeService.saveRouteDto(postRouteDto);
+  }
 }
