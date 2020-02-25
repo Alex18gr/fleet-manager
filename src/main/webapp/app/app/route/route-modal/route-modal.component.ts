@@ -106,6 +106,19 @@ export class RouteModalComponent implements OnInit {
   }
 
   onSaveChanges() {
+
+    this.savingData = true;
+    this.routeService.postNewRoute({
+      d_type: this.driversList[this.routeForm.value.d_row].type,
+      d_id: this.driversList[this.routeForm.value.d_row].id,
+      v_type: this.vehiclesList[this.routeForm.value.v_row].type,
+      v_id: this.vehiclesList[this.routeForm.value.v_row].id,
+      destination: this.routeForm.value.destination
+    }).subscribe(data => {
+      console.log(data);
+      this.savingData = false;
+    })
+
     // console.log(this.employeeForm);
     // if (this.editMode) {
     //   this.driverService.updateEmployeeDriver({

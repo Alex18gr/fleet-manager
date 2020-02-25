@@ -6,4 +6,5 @@ export class Driver {
   nationality: string;
   address: string;
   city: string;
+  type: string;
 }

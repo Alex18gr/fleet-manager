@@ -5,6 +5,6 @@ export class Route {
   v_type: string;
   v_id: number;
   destination: string;
-  d_full_name: string;
-  v_plate: string;
+  d_full_name?: string;
+  v_plate?: string;
 }
