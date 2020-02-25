@@ -31,4 +31,8 @@ export class DriverService {
   getAllDrivers(): Observable<Driver[]> {
     return this.http.get<Driver[]>(this.api_path + 'driver/all');
   }
+
+  getDriversTotalRoutes(): Observable<{fullName: string, totalRoutes: number}[]> {
+    return this.http.get<{fullName: string, totalRoutes: number}[]>(this.api_path + 'driver/');
+  }
 }

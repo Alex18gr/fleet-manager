@@ -19,6 +19,7 @@ import { EditVehicleModalComponent } from './shared/edit-vehicle-modal/edit-vehi
 import { RoutesComponent } from './route/routes/routes.component';
 import { RouteModalComponent } from './route/route-modal/route-modal.component';
 import { RouteListComponent } from './route/route-list/route-list.component';
+import { DriverAnalyticsComponent } from './home/driver-analytics/driver-analytics.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { RouteListComponent } from './route/route-list/route-list.component';
     EditVehicleModalComponent,
     RoutesComponent,
     RouteModalComponent,
-    RouteListComponent
+    RouteListComponent,
+    DriverAnalyticsComponent
   ],
   imports: [
     BrowserModule,
