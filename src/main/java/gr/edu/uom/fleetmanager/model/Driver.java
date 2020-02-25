@@ -12,6 +12,9 @@ public class Driver {
   @Column(name = "id")
   private Long id;
 
+  @Column(name="type")
+  protected String type;
+
   @Column(name="name")
   private String name;
 
@@ -38,6 +41,14 @@ public class Driver {
 
   public void setId(Long id) {
     this.id = id;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
   }
 
   public String getName() {

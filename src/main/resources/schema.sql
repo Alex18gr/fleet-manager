@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS employee;
 
 CREATE TABLE employee (
   id INT AUTO_INCREMENT  PRIMARY KEY,
+  type VARCHAR(250) NOT NULL,
   name VARCHAR(250) NOT NULL,
   last_name VARCHAR(250) NOT NULL,
   dt_received date DEFAULT NULL,
@@ -16,6 +17,7 @@ DROP TABLE IF EXISTS client;
 
 CREATE TABLE client (
   id INT AUTO_INCREMENT  PRIMARY KEY,
+  type VARCHAR(250) NOT NULL,
   name VARCHAR(250) NOT NULL,
   last_name VARCHAR(250) NOT NULL,
   dt_received date DEFAULT NULL,
